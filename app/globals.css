@@ -5,6 +5,22 @@
 :root {
   --background: #f7f2ea;
   --foreground: #3b3027;
+  --card: #fffaf5;
+  --card-foreground: #3b3027;
+  --popover: #fffaf5;
+  --popover-foreground: #3b3027;
+  --primary: #5f8f5f;
+  --primary-foreground: #ffffff;
+  --secondary: #efe4d5;
+  --secondary-foreground: #3b3027;
+  --muted: #f3ece3;
+  --muted-foreground: #7a6f66;
+  --accent: #e3c8a7;
+  --accent-foreground: #3b3027;
+  --border: #e7d8c7;
+  --input: #f8f2ea;
+  --ring: #5f8f5f;
+  --radius: 1rem;
 }
 
 * {
@@ -20,4 +36,5 @@ body {
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: Inter, system-ui, sans-serif;
 }
