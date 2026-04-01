@@ -7,12 +7,36 @@ import { ArrowRight } from "lucide-react"
 export function HeroSection() {
   const [email, setEmail] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) {
+    setError("")
+
+    if (!email) return
+
+    try {
+      setIsLoading(true)
+
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      if (!res.ok) {
+        throw new Error("Failed to submit")
+      }
+
       setIsSubmitted(true)
       setEmail("")
+    } catch (err) {
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -25,14 +49,17 @@ export function HeroSection() {
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm text-muted-foreground">Coming Soon</span>
             </div>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight text-foreground text-balance">
+
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight text-foreground">
               Try a New Hobby Every Month
             </h1>
+
             <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
               Choose a hobby, receive a starter kit, and discover your next favorite obsession.
             </p>
+
             {isSubmitted ? (
-              <div className="bg-secondary p-6 rounded-2xl">
+              <div className="bg-secondary p-6 rounded-2xl max-w-md">
                 <p className="text-foreground font-medium">
                   You&apos;re on the list! We&apos;ll be in touch soon.
                 </p>
@@ -47,15 +74,20 @@ export function HeroSection() {
                   className="flex-1 px-5 py-3 rounded-full bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   required
                 />
+
                 <button
                   type="submit"
-                  className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
+                  disabled={isLoading}
+                  className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group disabled:opacity-60"
                 >
-                  Join the Waitlist
+                  {isLoading ? "Joining..." : "Join the Waitlist"}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
             )}
+
+            {error ? <p className="text-sm text-red-600">{error}</p> : null}
+
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4].map((i) => (
@@ -67,11 +99,13 @@ export function HeroSection() {
                   </div>
                 ))}
               </div>
+
               <p className="text-sm text-muted-foreground">
                 <span className="text-foreground font-medium">2,000+</span> hobby explorers already joined
               </p>
             </div>
           </div>
+
           <div className="relative">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
               <Image
@@ -82,6 +116,7 @@ export function HeroSection() {
                 priority
               />
             </div>
+
             <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-2xl shadow-lg border border-border">
               <p className="text-sm text-muted-foreground">This month&apos;s favorite</p>
               <p className="font-serif text-lg text-foreground">Watercolor Painting</p>
