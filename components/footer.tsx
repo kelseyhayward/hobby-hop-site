@@ -23,7 +23,7 @@ export function Footer() {
             </a>
           </nav>
           <p className="text-sm text-muted-foreground">
-            © 2026 The Hobby Hop. All rights reserved.
+            © 2026 AML Strategies LLC d/b/a The Hoppy Hop. All rights reserved.
           </p>
         </div>
       </div>
