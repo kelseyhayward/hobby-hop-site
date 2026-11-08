@@ -19,9 +19,8 @@ export function Header() {
           <a href="#hobbies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Hobbies
           </a>
-          <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            FAQ
-          </a>
+          <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+          <Link href="/shop" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Shop</Link>
         </nav>
         <a
           href="#waitlist"

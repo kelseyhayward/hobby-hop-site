@@ -6,6 +6,7 @@ import { EarlyAccess } from "@/components/early-access"
 import { FAQ } from "@/components/faq"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
+import { ShopTeaser } from "@/components/shop-teaser"
 import { Header } from "@/components/header"
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <HowItWorks />
       <HobbyGrid />
+      <ShopTeaser />
       <WhatsInTheBox />
       <EarlyAccess />
       <FAQ />

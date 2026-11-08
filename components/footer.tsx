@@ -18,13 +18,11 @@ export function Footer() {
             <a href="#hobbies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Hobbies
             </a>
-            <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              FAQ
-            </a>
+            <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+            <Link href="/shop" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Shop</Link>
           </nav>
-          <p className="text-sm text-muted-foreground">
-            © 2026 AML Strategies LLC d/b/a The Hoppy Hop. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4 text-sm text-muted-foreground"><Link href="/shipping-policy" className="hover:text-foreground">Shipping</Link><Link href="/refund-policy" className="hover:text-foreground">Returns</Link><Link href="/privacy-policy" className="hover:text-foreground">Privacy</Link><Link href="/terms" className="hover:text-foreground">Terms</Link><a href="mailto:TheHobbyHoppersClub@gmail.com" className="hover:text-foreground">Email</a></div>
+          <p className="text-sm text-muted-foreground">© 2026 AML Strategies LLC d/b/a The Hobby Hop. All rights reserved.</p>
         </div>
       </div>
     </footer>

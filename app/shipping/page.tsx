@@ -1,0 +1,3 @@
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+export default function ShippingPage() { return <><Header /><main className="mx-auto max-w-3xl px-6 pb-32 pt-36"><p className="mb-4 text-sm font-medium uppercase tracking-wider text-primary">The Hobby Hop</p><h1 className="font-serif text-5xl">Shipping</h1><div className="mt-8 flex flex-col gap-5 leading-relaxed text-muted-foreground"><p>Orders ship within 3–5 business days via USPS or UPS. You&apos;ll receive tracking information by email when your order ships.</p><p>We currently ship within the United States. Shipping rates are calculated at checkout based on your order.</p></div></main><Footer /></> }
