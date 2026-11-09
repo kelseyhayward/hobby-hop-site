@@ -1,6 +1,7 @@
 import "server-only"
 
-import Stripe from "stripe"
+import { getStripe } from "@/lib/stripe"
+
 
 export type ProductKey =
   | "kit_martini"
@@ -29,10 +30,6 @@ export const PRODUCTS: Product[] = [
   { key: "canvas_gingerbread", name: "The Gingerbread Cottage — Canvas Only", description: "The canvas only — threads, needle, scissors, and guide are not included.", size: "7\" × 7\"", image: "/images/canvas-gingerbread.jpg", priceId: process.env["price_1UZd4oAhAeFmnuAluMM3dsyp"] ?? "", category: "canvas" },
 ]
 
-function getStripe() {
-  const secretKey = process.env["sk" + "_test_51US08BAhAeFmnuAl9sNcCdC9VZRNXVX7RYotBJroa0gJfEVtK6UvXaisYXiujXZSf1y3H9N3CqWWMRS9o4yFv2nL001JKEDVRZ"]
-  return secretKey ? new Stripe(secretKey) : null
-}
 
 export async function getPricedProducts() {
   const stripe = getStripe()

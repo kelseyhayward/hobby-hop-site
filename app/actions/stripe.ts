@@ -1,13 +1,9 @@
 "use server"
 
 import { headers } from "next/headers"
-import Stripe from "stripe"
 import { getProduct, productKeys, type ProductKey } from "@/lib/products"
 
-function getStripe() {
-  const secretKey = process.env["sk" + "_test_51US08BAhAeFmnuAl9sNcCdC9VZRNXVX7RYotBJroa0gJfEVtK6UvXaisYXiujXZSf1y3H9N3CqWWMRS9o4yFv2nL001JKEDVRZ"]
-  return secretKey ? new Stripe(secretKey) : null
-}
+import { getStripe } from "@/lib/stripe"
 const friendlyError = "Something went wrong starting checkout — please try again or email TheHobbyHoppersClub@gmail.com"
 
 export async function createCheckoutSession(selection: Record<string, unknown>) {
