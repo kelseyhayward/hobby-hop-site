@@ -1,0 +1,3 @@
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+export default function TermsPage() { return <><Header /><main className="mx-auto max-w-3xl px-6 pb-32 pt-36"><p className="mb-4 text-sm font-medium uppercase tracking-wider text-primary">The Hobby Hop</p><h1 className="font-serif text-5xl">Terms</h1><div className="mt-8 flex flex-col gap-5 leading-relaxed text-muted-foreground"><p>By placing an order, you agree to provide accurate billing and shipping information and to use our products for personal, lawful purposes.</p><p>Product availability, pricing, and shipping estimates may change. Questions about an order can be sent to TheHobbyHoppersClub@gmail.com.</p></div></main><Footer /></> }

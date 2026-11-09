@@ -1,0 +1,3 @@
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+export default function PrivacyPage() { return <><Header /><main className="mx-auto max-w-3xl px-6 pb-32 pt-36"><p className="mb-4 text-sm font-medium uppercase tracking-wider text-primary">The Hobby Hop</p><h1 className="font-serif text-5xl">Privacy</h1><div className="mt-8 flex flex-col gap-5 leading-relaxed text-muted-foreground"><p>We use the information you provide to process orders, communicate about your purchase, and send updates only when you opt in.</p><p>We do not sell your personal information. Payments are securely processed by Stripe, and we receive only the information needed to fulfill your order.</p></div></main><Footer /></> }

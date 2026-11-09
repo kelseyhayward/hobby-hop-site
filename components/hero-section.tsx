@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   const [email, setEmail] = useState("")
@@ -58,35 +59,11 @@ export function HeroSection() {
               Choose a hobby, receive a starter kit, and discover your next favorite obsession.
             </p>
 
-            {isSubmitted ? (
-              <div className="bg-secondary p-6 rounded-2xl max-w-md">
-                <p className="text-foreground font-medium">
-                  You&apos;re on the list! We&apos;ll be in touch soon.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-5 py-3 rounded-full bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  required
-                />
-
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group disabled:opacity-60"
-                >
-                  {isLoading ? "Joining..." : "Join the Waitlist"}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </form>
-            )}
-
-            {error ? <p className="text-sm text-red-600">{error}</p> : null}
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link href="/shop" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground hover:opacity-90">Shop Needlepoint <ArrowRight className="size-4" /></Link>
+              <a href="#waitlist" className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3 font-medium text-foreground hover:bg-secondary">Join the Waitlist</a>
+            </div>
+            <p className="text-sm text-muted-foreground">Ships in 3–5 business days · Free shipping over $75</p>
 
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-3">
