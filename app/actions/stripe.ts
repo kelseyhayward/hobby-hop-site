@@ -26,8 +26,8 @@ export async function createCheckoutSession(selection: Record<string, unknown>) 
     const kitCount = entries.filter(([key]) => getProduct(key)?.category === "kit").reduce((total, [, quantity]) => total + quantity, 0)
     const hasKit = kitCount > 0
     const hasCanvasOnly = entries.some(([key]) => getProduct(key)?.category === "canvas")
-    const kitRateId = process.env["shr_1UZdRxAhAeFmnuAl1SGwaTgf"]
-    const canvasRateId = process.env["shr_1UZdTYAhAeFmnuAlilIjT2YO"]
+        const kitRateId = process.env.STRIPE_SHIPPING_RATE_KIT
+    const canvasRateId = process.env.STRIPE_SHIPPING_RATE_CANVAS
     const rateId = hasKit ? kitRateId : canvasRateId
     if (!rateId) throw new Error("Missing shipping rate")
     const rate = await stripe.shippingRates.retrieve(rateId)
