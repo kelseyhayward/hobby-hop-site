@@ -1,52 +1,33 @@
 import { Palette, Package, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 const steps = [
-  {
-    icon: Palette,
-    title: "Pick Your Hobby",
-    description: "Browse our curated selection of hobbies and choose the one that sparks your curiosity.",
-  },
-  {
-    icon: Package,
-    title: "Get Your Starter Kit",
-    description: "Receive a beautifully packaged box with everything you need to begin your new adventure.",
-  },
-  {
-    icon: Sparkles,
-    title: "Discover Something New",
-    description: "Follow our guided instructions and unlock a new skill that could become your next passion.",
-  },
+  { icon: Palette, title: "Pick your design", description: "Choose a starter kit and add any extra canvases you love." },
+  { icon: Package, title: "We pack & ship", description: "We pack your kit by hand and ship it in 3–5 business days in our signature sage box." },
+  { icon: Sparkles, title: "Make your first stitch", description: "Follow Your First Stitch and the video walkthrough, and finish your first piece." },
 ]
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 px-6 bg-secondary/50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-sm text-primary font-medium uppercase tracking-wider mb-4">How It Works</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground text-balance">
-            Your journey to new hobbies starts here
-          </h2>
+    <section id="how-it-works" className="bg-secondary/50 px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-sm font-medium uppercase tracking-wider text-primary">How It Works</p>
+          <h2 className="font-serif text-4xl text-foreground text-balance md:text-5xl">From our table to yours</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
-            <div
-              key={step.title}
-              className="bg-card p-8 rounded-3xl border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <step.icon className="w-6 h-6 text-primary" />
-                </div>
-                <span className="font-serif text-5xl text-border group-hover:text-primary/20 transition-colors">
-                  0{index + 1}
-                </span>
+        <div className="grid gap-8 md:grid-cols-3">
+          {steps.map(({ icon: Icon, title, description }, index) => (
+            <div key={title} className="group rounded-3xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
+              <div className="mb-6 flex items-center gap-4">
+                <div className="flex size-14 items-center justify-center rounded-2xl bg-primary/10 transition-colors group-hover:bg-primary/20"><Icon aria-hidden="true" className="size-6 text-primary" /></div>
+                <span className="font-serif text-5xl text-border transition-colors group-hover:text-primary/20">0{index + 1}</span>
               </div>
-              <h3 className="font-serif text-xl text-foreground mb-3">{step.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+              <h3 className="mb-3 font-serif text-xl text-foreground">{title}</h3>
+              <p className="leading-relaxed text-muted-foreground">{description}</p>
             </div>
           ))}
         </div>
+        <p className="mt-8 text-center text-sm text-muted-foreground">Coming soon: a new hobby delivered every month through the <Link href="/#club" className="underline underline-offset-2 hover:text-foreground">Hobby Hoppers Club</Link>.</p>
       </div>
     </section>
   )
