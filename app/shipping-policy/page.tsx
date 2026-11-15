@@ -11,7 +11,7 @@ export default function ShippingPolicyPage() {
     <p><strong>Tracking.</strong> When your order ships, you&apos;ll receive an email with a tracking number.</p>
     <p><strong>Check your address.</strong> Please double-check your shipping address at checkout. If you spot a mistake, email <PolicyEmail /> right away and we&apos;ll update it if your order hasn&apos;t shipped. If a package is returned to us because of an incorrect address, we&apos;ll reship it once you cover the new shipping cost.</p>
     <p><strong>Lost or stolen packages.</strong> If tracking shows your package as delivered but you can&apos;t find it, check with neighbors and your local post office first, then email us within 7 days of the delivery date. We&apos;ll work with the carrier to help find it. Once a carrier marks a package as delivered, we can&apos;t guarantee a replacement, but we&apos;ll always try to make it right.</p>
-    <p><strong>Damaged packages or missing items.</strong> If your order arrives damaged or something is missing, email <PolicyEmail /> within 7 days of delivery with your order number and a photo. We&apos;ll send a replacement for the damaged or missing item at no cost to you.</p>
+    <p><strong>Damaged packages or missing items.</strong> If your order arrives damaged or something is missing, email TheHobbyHoppersClub@gmail.com within 7 days of delivery with your order number and a photo.</p>
     <p><strong>Questions?</strong> Email <PolicyEmail />.</p>
   </PolicyLayout>
 }
