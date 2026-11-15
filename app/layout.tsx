@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { DM_Serif_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -11,8 +11,8 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'The Hobby Hop - Try a New Hobby Every Month',
-  description: 'Discover your next favorite obsession with The Hobby Hop. Choose a hobby, receive a beginner-friendly starter kit, and explore something new every month.',
+  title: 'The Hobby Hop | Hand-Painted Needlepoint Kits',
+  description: 'Beginner-friendly hand-painted needlepoint kits, thoughtfully packed with everything you need to make your first stitch.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#f7f2ea',
 }
 
 export default function RootLayout({

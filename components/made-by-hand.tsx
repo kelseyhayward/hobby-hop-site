@@ -1,0 +1,7 @@
+import { Brush, PackageCheck, Palette } from "lucide-react"
+
+const promises = [{ label: "Hand-painted canvases", icon: Palette }, { label: "Hand-curated kits", icon: Brush }, { label: "Hand-packed boxes", icon: PackageCheck }]
+
+export function MadeByHand() {
+  return <section className="px-6 py-20"><div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-14"><div role="img" aria-label="The Hobby Hop founders" className="flex aspect-[4/3] items-center justify-center rounded-3xl border border-border bg-background"><span className="font-serif text-2xl text-muted-foreground">The Hobby Hop founders</span></div><div><p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">Our Story</p><h2 className="mb-5 font-serif text-4xl md:text-5xl">Made by hand, by us</h2><p className="leading-relaxed text-muted-foreground">We&apos;re the two founders of The Hobby Hop, and every canvas we sell is hand-painted by us — not printed in a factory. We match every thread color by hand and pack every box ourselves in Texas. No two canvases are exactly alike, and that&apos;s the point.</p><ul className="mt-7 flex flex-col gap-4">{promises.map(({ label, icon: Icon }) => <li key={label} className="flex items-center gap-3"><Icon className="size-5 text-primary" aria-hidden="true" /><span className="text-sm font-medium">{label}</span></li>)}</ul></div></div></section>
+}

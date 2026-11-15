@@ -1,68 +1,13 @@
-import { Check, BookOpen, Users, Package, Lightbulb } from "lucide-react"
+import { Check, BookOpen, Scissors, Palette, CircleDot } from "lucide-react"
 
 const features = [
-  {
-    icon: Package,
-    title: "All beginner supplies",
-    description: "Quality materials handpicked for your first steps into the hobby.",
-  },
-  {
-    icon: BookOpen,
-    title: "Step-by-step instructions",
-    description: "Clear, friendly guides that make learning enjoyable and stress-free.",
-  },
-  {
-    icon: Lightbulb,
-    title: "A guided introduction",
-    description: "Learn the history, techniques, and tips from experts in the field.",
-  },
-  {
-    icon: Users,
-    title: "Community access",
-    description: "Connect with fellow hobby explorers to share your journey.",
-  },
+  { icon: Palette, title: "Your hand-painted canvas", description: "Your choice of design." },
+  { icon: CircleDot, title: "Every thread color", description: "Matched by hand to your design." },
+  { icon: Scissors, title: "Needle & embroidery scissors", description: "Ready to go." },
+  { icon: BookOpen, title: "Your First Stitch", description: "A printed step-by-step guide, plus a video walkthrough you open by scanning the QR code inside.", featured: true },
 ]
+const bullets = ["Hand-painted by us", "Beginner-friendly", "Ships in 3–5 days", "Packed by hand"]
 
 export function WhatsInTheBox() {
-  return (
-    <section className="py-24 px-6 bg-secondary/50">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-sm text-primary font-medium uppercase tracking-wider mb-4">What&apos;s Included</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 text-balance">
-              Everything you need in one beautiful box
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Each Hobby Hop box is thoughtfully curated to give you the best possible start. No overwhelm, no guesswork—just pure creative joy.
-            </p>
-            <div className="space-y-4">
-              {["Premium quality supplies", "Beginner-friendly projects", "Expert tips & tricks", "Exclusive community perks"].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Check className="w-3 h-3 text-primary" />
-                  </div>
-                  <span className="text-foreground">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="bg-card p-6 rounded-2xl border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <feature.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-serif text-lg text-foreground mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+  return <section className="px-6 py-20"><div className="mx-auto max-w-6xl"><div className="mb-12 text-center"><p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">What&apos;s Included</p><h2 className="font-serif text-4xl md:text-5xl">Everything you need to make your first stitch</h2></div><div className="grid gap-4 sm:grid-cols-2">{features.map(({ icon: Icon, title, description, featured }) => <article key={title} className={`rounded-2xl border p-6 transition-all ${featured ? "border-primary/40 bg-primary/10 md:col-span-2" : "border-border bg-card hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"}`}><div className="mb-4 flex items-center justify-between"><span className="grid size-12 place-items-center rounded-xl bg-primary/10"><Icon className="size-5 text-primary" aria-hidden="true" /></span>{featured && <span className="rounded-full bg-background px-3 py-1 text-xs font-medium text-primary">Guide + video</span>}</div><h3 className="mb-2 font-serif text-xl">{title}</h3><p className="text-sm leading-relaxed text-muted-foreground">{description}</p></article>)}</div><ul className="mt-8 flex flex-wrap justify-center gap-x-7 gap-y-3">{bullets.map((item) => <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground"><Check className="size-4 text-primary" aria-hidden="true" />{item}</li>)}</ul></div></section>
 }
