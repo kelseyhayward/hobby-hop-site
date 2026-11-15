@@ -1,6 +1,18 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { PolicyEmail, PolicyLayout } from "@/components/policy-layout"
 
 export default function PrivacyPolicyPage() {
-  return <><Header /><main className="mx-auto max-w-3xl px-6 pb-24 pt-40"><p className="text-sm uppercase tracking-widest text-primary">Policy</p><h1 className="mt-4 font-serif text-5xl">Privacy Policy</h1><p className="mt-8 leading-8 text-muted-foreground">Privacy policy details coming soon. Please check back here for the final policy text.</p></main><Footer /></>
+  return <PolicyLayout title="Privacy Policy">
+    <p>The Hobby Hop is operated by AML Strategies LLC (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;), based in Texas. This policy explains what personal information we collect through thehobbyhop.com, how we use it, and the choices you have. We do not sell your personal information.</p>
+    <div><p><strong>What we collect.</strong></p><ul className="list-disc pl-6"><li>Information you give us: your name and email address when you join our waitlist or email list, and your name, email, phone number (if provided), and shipping and billing address when you place an order.</li><li>Payment information: all payments are processed by Stripe. We never see or store your full card number.</li><li>Information collected automatically: like most websites, we and our partners collect basic technical information when you visit, such as your browser type, device, pages viewed, and how you arrived at our site. We use cookies and similar tools, including the Pinterest Tag, to understand site traffic and measure our advertising.</li></ul></div>
+    <div><p><strong>How we use your information.</strong></p><ul className="list-disc pl-6"><li>To process and ship your orders</li><li>To send receipts and shipping updates</li><li>To send waitlist updates, launch news, and marketing emails you signed up for</li><li>To answer your questions and requests</li><li>To understand how our site and ads perform and improve them</li><li>To prevent fraud and meet our legal, tax, and accounting obligations</li></ul></div>
+    <p><strong>Who we share it with.</strong> We share information only with service providers that help us run the store, and only as needed for them to do that work: Stripe (payments), shipping carriers (USPS, UPS), our website host, our email provider, and advertising and analytics partners such as Pinterest. We may also share information if required by law or to protect our rights.</p>
+    <p><strong>Emails.</strong> You can unsubscribe from marketing emails at any time using the link at the bottom of any marketing email. We&apos;ll still send emails about your orders, such as receipts and shipping updates.</p>
+    <p><strong>Cookies and ads.</strong> You can block or delete cookies in your browser settings. You can also limit personalized ads through your device settings and the ad preferences in your Pinterest account. Blocking cookies won&apos;t stop you from buying from us.</p>
+    <p><strong>How long we keep it.</strong> We keep order records as long as needed for tax and accounting purposes. We keep email list information until you unsubscribe or ask us to delete it.</p>
+    <p><strong>Your choices and rights.</strong> You can ask us to access, correct, or delete the personal information we hold about you by emailing <PolicyEmail />. We&apos;ll respond within 45 days. Depending on where you live, you may have additional rights under your state&apos;s privacy laws, and we&apos;ll honor them.</p>
+    <p><strong>Security.</strong> We use reputable service providers and reasonable safeguards to protect your information, but no online service can guarantee complete security.</p>
+    <p><strong>Children.</strong> Our site is not directed to children under 13, and we do not knowingly collect information from them. If you believe a child has given us information, contact us and we&apos;ll delete it.</p>
+    <p><strong>Changes to this policy.</strong> We may update this policy from time to time. We&apos;ll post the new version on this page with a new effective date.</p>
+    <p><strong>Contact us.</strong> AML Strategies LLC d/b/a The Hobby Hop, PO Box 796532, Dallas, TX 75379, <PolicyEmail />.</p>
+  </PolicyLayout>
 }

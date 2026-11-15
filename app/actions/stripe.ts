@@ -42,6 +42,8 @@ export async function createCheckoutSession(selection: Record<string, unknown>) 
       shipping_options: shippingAmount > 0 ? [{ shipping_rate_data: { type: "fixed_amount", fixed_amount: { amount: shippingAmount, currency: "usd" }, display_name: "Standard Shipping (ships in 3–5 business days)", tax_behavior: "exclusive", tax_code: "txcd_92010001" } }] : [],
       billing_address_collection: "auto",
       automatic_tax: { enabled: true },
+      consent_collection: { terms_of_service: "required" },
+      custom_text: { terms_of_service_acceptance: { message: "I agree to the [Terms of Service](https://thehobbyhop.com/terms), including the product safety terms, and the [Refund & Return Policy](https://thehobbyhop.com/refund-policy)." } },
       return_url: `${origin}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
     })
     return { clientSecret: session.client_secret }
