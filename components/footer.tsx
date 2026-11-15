@@ -1,30 +1,40 @@
 import Link from "next/link"
 
+const footerLinkClass = "text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:underline focus-visible:underline-offset-2"
+
 export function Footer() {
   return (
-    <footer className="py-12 px-6 border-t border-border">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-serif text-lg">H</span>
-            </div>
-            <span className="font-serif text-xl text-foreground">The Hobby Hop</span>
+    <footer className="border-t border-border px-6 py-12">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10">
+        <div className="flex items-center gap-2 self-start">
+          <div className="flex size-8 items-center justify-center rounded-full bg-primary">
+            <span className="font-serif text-lg text-primary-foreground">H</span>
           </div>
-          <nav className="flex items-center gap-8">
-            <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              How It Works
-            </a>
-            <a href="#hobbies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Hobbies
-            </a>
-            <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
-            <Link href="/shop" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Shop</Link>
+          <span className="font-serif text-xl text-foreground">The Hobby Hop</span>
+        </div>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+          <nav aria-label="Shop" className="flex flex-col items-start gap-3">
+            <h2 className="text-sm font-medium text-foreground">Shop</h2>
+            <Link href="/shop" className={footerLinkClass}>Needlepoint Kits</Link>
+            <Link href="/shop#canvases" className={footerLinkClass}>Extra Canvases</Link>
           </nav>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground"><Link href="/shipping-policy" className="hover:text-foreground">Shipping</Link><Link href="/refund-policy" className="hover:text-foreground">Returns</Link><Link href="/privacy-policy" className="hover:text-foreground">Privacy</Link><Link href="/terms" className="hover:text-foreground">Terms</Link><a href="mailto:TheHobbyHoppersClub@gmail.com" className="hover:text-foreground">Email</a></div>
-          <div className="flex flex-col items-center gap-2 text-primary">
-            <span className="text-sm text-muted-foreground">Follow us</span>
-            <nav aria-label="Follow The Hobby Hop" className="flex items-center">
+          <nav aria-label="The Club" className="flex flex-col items-start gap-3">
+            <h2 className="text-sm font-medium text-foreground">The Club</h2>
+            <Link href="/#club" className={footerLinkClass}>Join the Waitlist</Link>
+            <Link href="/#how-it-works" className={footerLinkClass}>How It Works</Link>
+          </nav>
+          <nav aria-label="Help" className="flex flex-col items-start gap-3">
+            <h2 className="text-sm font-medium text-foreground">Help</h2>
+            <Link href="/#faq" className={footerLinkClass}>FAQ</Link>
+            <Link href="/shipping-policy" className={footerLinkClass}>Shipping</Link>
+            <Link href="/refund-policy" className={footerLinkClass}>Returns</Link>
+            <Link href="/privacy-policy" className={footerLinkClass}>Privacy</Link>
+            <Link href="/terms" className={footerLinkClass}>Terms</Link>
+            <a href="mailto:TheHobbyHoppersClub@gmail.com" className={footerLinkClass}>Email us</a>
+          </nav>
+          <div className="flex flex-col items-start gap-3 text-primary">
+            <h2 className="text-sm font-medium text-foreground">Follow us</h2>
+            <nav aria-label="Follow The Hobby Hop" className="-ml-2 flex items-center">
               <a href="https://www.instagram.com/thehobbyhopclub" target="_blank" rel="noopener noreferrer" aria-label="The Hobby Hop on Instagram" className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.8" r=".8" fill="currentColor" stroke="none"/></svg>
               </a>
@@ -39,8 +49,8 @@ export function Footer() {
               </a>
             </nav>
           </div>
-          <p className="text-sm text-muted-foreground">© 2026 AML Strategies LLC d/b/a The Hobby Hop. All rights reserved.</p>
         </div>
+        <p className="border-t border-border pt-6 text-sm text-muted-foreground">© 2026 AML Strategies LLC d/b/a The Hobby Hop. All rights reserved.</p>
       </div>
     </footer>
   )

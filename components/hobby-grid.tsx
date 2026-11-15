@@ -13,7 +13,7 @@ const hobbies = [
 
 export function HobbyGrid() {
   return (
-    <section id="hobbies" className="py-24 px-6">
+    <section id="club" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm text-primary font-medium uppercase tracking-wider mb-4">Explore Hobbies</p>
