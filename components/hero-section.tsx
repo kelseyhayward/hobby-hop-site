@@ -63,7 +63,7 @@ export function HeroSection() {
               <Link href="/shop" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground hover:opacity-90">Shop Needlepoint <ArrowRight className="size-4" /></Link>
               <a href="#waitlist" className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3 font-medium text-foreground hover:bg-secondary">Join the Waitlist</a>
             </div>
-            <p className="text-sm text-muted-foreground">Ships in 3–5 business days · Free shipping over $75</p>
+            <p className="text-sm text-muted-foreground">Ships in 3–5 business days</p>
 
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-3">
