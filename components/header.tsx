@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Menu, ShoppingBag } from "lucide-react"
 import { AnnouncementBar } from "@/components/announcement-bar"
+import { useCart } from "@/components/cart-provider"
 import {
   Sheet,
   SheetClose,
@@ -36,9 +37,12 @@ function Brand() {
 }
 
 function ShopBagLink() {
+  const { itemCount } = useCart()
+
   return (
-    <Link href="/shop" aria-label="Shop" className="inline-flex size-11 items-center justify-center rounded-full text-foreground hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+    <Link href="/shop" aria-label={itemCount ? `Shopping bag with ${itemCount} ${itemCount === 1 ? "item" : "items"}` : "Shopping bag"} className="relative inline-flex size-11 items-center justify-center rounded-full text-foreground hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background">
       <ShoppingBag aria-hidden="true" className="size-5" />
+      {itemCount > 0 && <span aria-hidden="true" className="absolute right-0.5 top-0.5 inline-flex min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-medium leading-4 text-primary-foreground">{itemCount}</span>}
     </Link>
   )
 }
