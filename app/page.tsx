@@ -7,6 +7,7 @@ import { FAQ } from "@/components/faq"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 import { ShopTeaser } from "@/components/shop-teaser"
+import { OurStory } from "@/components/our-story"
 import { Header } from "@/components/header"
 
 export default function Home() {
@@ -14,10 +15,11 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <HeroSection />
+      <ShopTeaser />
+      <OurStory />
+      <WhatsInTheBox />
       <HowItWorks />
       <HobbyGrid />
-      <ShopTeaser />
-      <WhatsInTheBox />
       <EarlyAccess />
       <FAQ />
       <FinalCTA />
