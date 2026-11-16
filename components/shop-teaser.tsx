@@ -1,12 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-
-const kits = [
-  ["The Gingham Martini", "/images/kit-martini.jpg"],
-  ["Market Berries", "/images/kit-berries.jpg"],
-  ["The Gingerbread Cottage", "/images/kit-gingerbread.jpg"],
-]
+import { KITS } from "@/lib/kits"
 
 export function ShopTeaser() {
   return (
@@ -17,13 +12,13 @@ export function ShopTeaser() {
           <h2 className="font-serif text-4xl md:text-5xl">A little something to stitch</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
-          {kits.map(([name, image]) => (
-            <Link href="/shop" key={name} className="group overflow-hidden rounded-3xl border border-border bg-card transition-shadow hover:shadow-lg">
+          {KITS.map((kit) => (
+            <Link href={`/shop/${kit.slug}`} key={kit.slug} className="group overflow-hidden rounded-3xl border border-border bg-card transition-shadow hover:shadow-lg">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <Image src={image} alt={name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <Image src={kit.images.kit} alt={kit.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="p-5">
-                <p className="font-serif text-xl text-foreground">{name}</p>
+                <p className="font-serif text-xl text-foreground">{kit.name}</p>
                 <p className="mt-1 text-sm text-muted-foreground">Starter Kit · $40</p>
               </div>
             </Link>
